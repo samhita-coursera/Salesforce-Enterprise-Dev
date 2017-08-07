@@ -1,0 +1,48 @@
+<apex:page standardController="Opportunity"  tabStyle="Opportunity" extensions="DealDeskController">
+      <apex:form id="DealDeskForm">
+      <apex:inputHidden value="{!Opportunity.Is_Deal_Desk_Submitted__c}" id="DealDeskSubmitted"/> 
+        <apex:pageBlock >
+            <apex:pageBlockButtons >         
+                <apex:commandButton action="{!saveRecord}" value="Save" id="block" onclick="loadHiddenFields()"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2" title="Opportunity Deal Desk">                           
+                    <apex:outputField value="{!Opportunity.Account.Name}"/>  
+                    <apex:outputField value="{!Opportunity.Account.BillingCountry}"/>
+                    <apex:inputField value="{!Opportunity.Account.Customer_Success_Account_Tier__c}" required="true"/> 
+                    <apex:inputField value="{!Opportunity.Account.Industry}" required="true"/>    
+                    <apex:inputField value="{!Opportunity.Name}"/>
+                    <apex:inputField label="Account Executive" value="{!Opportunity.Owner.Name}"/>
+                    <apex:inputField value="{!Opportunity.Type}" required="true"/>  
+                    <apex:inputField value="{!Opportunity.StageName}"/> 
+                    <apex:inputField value="{!Opportunity.CloseDate}"/>
+                    <apex:outputField value="{!Opportunity.Amount}" id="Amount"/>
+                    <apex:inputField value="{!Opportunity.ACV_Quota_Retirement__c}" required="true"/>
+                    <apex:inputField value="{!Opportunity.Discount_Approved__c}"/>                            
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="Notes and Next Steps" id="DealNotesandSteps">
+                    <apex:outputText escape="false">
+                         Please upload customer's paper on Google doc and provide link to the doc below
+                         <p/>
+                    </apex:outputText>    
+                   <apex:inputField value="{!Opportunity.Link_to_Google_Doc__c}" required="true"/>
+                   <apex:outputText escape="false">
+                         Please specify details such as if customer need vendor registration or if this a pilot/proof of concept
+                         <p/>
+                    </apex:outputText>
+                   <apex:inputField value="{!Opportunity.Vendor_Registration_Needed__c}" required="true"/>
+                   <apex:inputField value="{!Opportunity.Pilot_POC__c}" required="true"/>
+                   <apex:outputText escape="false">
+                         Provide any additional details that would be helpful during the legal negotiation.
+                         <p/>
+                    </apex:outputText>  
+                    <apex:inputField label="Legal Negotiation Details" value="{!Opportunity.Legal_Negotiation_Next_Steps__c}" required="true"/>
+           </apex:pageBlockSection>
+       </apex:pageBlock>
+        <script>
+         function loadHiddenFields(){
+            document.getElementById('{!$Component.DealDeskForm}').elements['{!$Component.DealDeskSubmitted}'].value='True';
+            }
+        </script>
+     </apex:form>
+     <apex:relatedList list="OpportunityLineItems"  subject="{!$CurrentPage.parameters.id}"/>
+</apex:page>

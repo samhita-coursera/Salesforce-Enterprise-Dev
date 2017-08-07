@@ -1,0 +1,20 @@
+<apex:page standardController="Case"  tabStyle="Case" >
+      <apex:form id="ImplementationDetailsForm">  
+        <apex:pageBlock >
+            <apex:pageBlockButtons >         
+                <apex:commandButton action="{!save}" value="Save" id="block"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2" title="Implementation Details">                           
+                    <apex:outputField label="Name of the company" value="{!Case.Account.Name}"/>
+                    <apex:inputField value="{!Case.Client_Slug__c}"/>  
+                    <apex:inputField value="{!Case.Opportunity__r.Launch_Date__c}"/>
+                    <apex:inputField value="{!Case.Opportunity__r.Total_Number_of_Users__c}"/>
+                    <apex:inputField value="{!Case.Opportunity__r.Type_of_Agreement__c}" />                         
+            </apex:pageBlockSection>
+       </apex:pageBlock>
+     </apex:form>
+      <apex:relatedList title="Attach a Square logo" subject="{!$CurrentPage.parameters.id}" list="CombinedAttachments"/>
+       <apex:relatedList title="Attach a Banner" subject="{!$CurrentPage.parameters.id}" list="CombinedAttachments"/>
+        <apex:relatedList title="Attach a Rectangular logo" subject="{!$CurrentPage.parameters.id}" list="CombinedAttachments"/>
+      
+</apex:page>

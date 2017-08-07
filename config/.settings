@@ -1,0 +1,17 @@
+{
+    "projectName": "Enterprise - Dev",
+    "username": "samhita@coursera.org.enterprise.dev",
+    "id": "a516a270-7b9f-11e7-af2f-2104cc75a4dd",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://cs17.salesforce.com",
+    "workspace": "/Users/spidapartiswati/Documents/Sublime Workspace",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}
