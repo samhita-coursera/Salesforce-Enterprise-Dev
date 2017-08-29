@@ -2,7 +2,7 @@ trigger CustomerPulseTrigger on Customer_Pulse__c (before insert,after insert, b
 	TriggerHandlerClass handler = new TriggerHandlerClass();
 	if(Trigger.isInsert) {
 		if(Trigger.isBefore) {
-			handler.OnBeforeInsert(Trigger.new, 'Customer_Pulse__c');
+			handler.OnCustomerPulseBeforeInsert(Trigger.new);
 		}
 	}
 }
