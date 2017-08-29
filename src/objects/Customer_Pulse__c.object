@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AccountName__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Customer Pulse</relationshipLabel>
+        <relationshipName>Customer_Pulese</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Coursera_Org_ID</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Admin_NPS__c</fullName>
+        <description>Admin NPS for admins in the contract as asked on the admin dashboard in the product</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Admin NPS for admins in the contract as asked on the admin dashboard in the product</inlineHelpText>
+        <label>Admin NPS</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Admin_nps_n_ratings__c</fullName>
+        <description>Number of NPS ratings given by admins in the contract.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of NPS ratings given by admins in the contract.</inlineHelpText>
+        <label>Admin nps n ratings</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Completion_Rate__c</fullName>
+        <description>Total Completions / Total Enrollments so is the percent completion Rate. Does not adjustment for censoring so people enrolled for any amount of time count towards this.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Completions / Total Enrollments so is the percent completion Rate. Does not adjustment for censoring so people enrolled for any amount of time count towards this.</inlineHelpText>
+        <label>Completion Rate</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Completions__c</fullName>
+        <description>Total number of completions (unique user_id, course_id combinations) within programs associated with this contract</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of completions (unique user_id, course_id combinations) within programs associated with this contract</inlineHelpText>
+        <label>Completions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Agreement End Date</inlineHelpText>
+        <label>Contract End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Course_Star_Rating__c</fullName>
+        <description>Average course star rating across all ratings given in all courses by enterprise enrollments in the contract</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Average course star rating across all ratings given in all courses by enterprise enrollments in the contract</inlineHelpText>
+        <label>Course Star Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Course_Star_n_rating__c</fullName>
+        <description>Number of course ratings that goes into calculating Course Star Rating</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of course ratings that goes into calculating Course Star Rating</inlineHelpText>
+        <label>Course Star n rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Signed_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Agreement Signed Date by Customer</inlineHelpText>
+        <label>Customer Signed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Enrollments__c</fullName>
+        <description>Total number of enrollments (unique user_id, course_id combinations) within programs associated with this contract</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of enrollments (unique user_id, course_id combinations) within programs associated with this contract</inlineHelpText>
+        <label>Enrollments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Enrollments_inactive_l2w__c</fullName>
+        <description>The percent of enrollments that have not completed the course that are inactive in the course for the last 2 weeks</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The percent of enrollments that have not completed the course that are inactive in the course for the last 2 weeks</inlineHelpText>
+        <label>Enrollments inactive l2w</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Enterprise_Contract_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Customer Contract ID recorded in Coursera Prod env</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Customer Contract ID recorded in Coursera Prod env</inlineHelpText>
+        <label>Enterprise Contract ID</label>
+        <length>250</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Enterprise_Customer_ID__c</fullName>
+        <description>Customer ID recorded in Coursera production env</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer ID recorded in Coursera production env</inlineHelpText>
+        <label>Enterprise Customer ID</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Enterprise_Customer_Name__c</fullName>
+        <description>Customer name recorded in Coursera Prod env</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer name recorded in Coursera Prod env</inlineHelpText>
+        <label>Enterprise Customer Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Enterprise_Customer_Slug__c</fullName>
+        <description>Customer slug recorded in Coursera Prod env</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer slug recorded in Coursera Prod env</inlineHelpText>
+        <label>Enterprise Customer Slug</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invites_Accepted__c</fullName>
+        <description>This field represents the number of invites accepted within programs associated with this contract</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field represents the number of invites accepted within programs associated with this contract</inlineHelpText>
+        <label>Invites Accepted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invites_Sent__c</fullName>
+        <description>Number of invites sent within programs associated with this contract</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of invites sent within programs associated with this contract</inlineHelpText>
+        <label>Invites Sent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Launch_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Launch Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Learner_NPS_End_Course__c</fullName>
+        <description>NPS of enrolled enterprise learners in the contract for those who completed the course</description>
+        <externalId>false</externalId>
+        <inlineHelpText>NPS of enrolled enterprise learners in the contract for those who completed the course</inlineHelpText>
+        <label>Learner NPS End Course</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Learner_NPS_First_Week__c</fullName>
+        <description>NPS of enrolled enterprise learners in the contract for those who completed the first module in their course</description>
+        <externalId>false</externalId>
+        <inlineHelpText>NPS of enrolled enterprise learners in the contract for those who completed the first module in their course</inlineHelpText>
+        <label>Learner NPS First Week</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Learner_NPS__c</fullName>
+        <externalId>false</externalId>
+        <label>Learner NPS Mid Course</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Learner_nps_end_course_n_ratings__c</fullName>
+        <description>Number of end of course NPS ratings given by completers in the contract.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of end of course NPS ratings given by completers in the contract.</inlineHelpText>
+        <label>Learner nps end course n ratings</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Learner_nps_first_week_n_ratings__c</fullName>
+        <description>Number of first week NPS ratings given in the first week in the contract.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of first week NPS ratings given in the first week in the contract.</inlineHelpText>
+        <label>Learner nps first week n ratings</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Learning_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Learning Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Users_Purchased__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Users Purchased</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_courses_per_user_purchased__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of courses per user purchased</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Members__c</fullName>
+        <description>Represents the number of program members joining through whatever means the contract uses across all programs in the contract</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Represents the number of program members joining through whatever means the contract uses across all programs in the contract.</inlineHelpText>
+        <label>Program Members</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Purchased_Enrollments_Allotted__c</fullName>
+        <externalId>false</externalId>
+        <label>Purchased Enrollments Allotted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Number_of_Enrollments_Purchased__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Number of Enrollments Purchased</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unenrolled__c</fullName>
+        <externalId>false</externalId>
+        <label>Unenrolled</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unique_Learners__c</fullName>
+        <externalId>false</externalId>
+        <label>Unique Learners</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unlimited_Users__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Unlimited Users</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Using_API__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Using API</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Using_Invitation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag for whether customer uses invitations or not.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Flag for whether customer uses invitations or not.</inlineHelpText>
+        <label>Using Invitation</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Using_SSO__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is customer using SSO?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is customer using SSO?</inlineHelpText>
+        <label>Using SSO</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>unenrolled_program_members__c</fullName>
+        <description>Unique learners - unique enrollers, so it represents the number of users who have not enrolled in a course in the contract</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unique learners - unique enrollers, so it represents the number of users who have not enrolled in a course in the contract</inlineHelpText>
+        <label>unenrolled program members</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Customer Pulse</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>AccountName__c</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Enterprise_Contract_ID__c</columns>
+        <columns>Enterprise_Customer_ID__c</columns>
+        <columns>Total_Number_of_Enrollments_Purchased__c</columns>
+        <columns>Enterprise_Customer_Name__c</columns>
+        <columns>Enterprise_Customer_Slug__c</columns>
+        <columns>Completions__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>C-{000000}</displayFormat>
+        <label>Customer Pulse Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Customer Pulse</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

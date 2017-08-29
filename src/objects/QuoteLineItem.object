@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddQuoteLine</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditAllQuoteLine</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Annual_Enrollments_per_Seat__c</fullName>
+        <externalId>false</externalId>
+        <label>Annual Enrollments per Seat</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Annual_Price_per_Enrollment_Old__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Annual Price per Enrollment</inlineHelpText>
+        <label>Annual Price per Enrollment_old</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Discount</fullName>
+    </fields>
+    <fields>
+        <fullName>HasQuoteSyncStarted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is being used to update the Quote Line Item record once Quote has Started Sync. That way the Process to update custom quote fields on opportunity fields will get triggered.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>for automatic process purpose</inlineHelpText>
+        <label>HasQuoteSyncStarted?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ListPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>Number_of_Enrollments_Old__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Enrollments_Old</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OpportunityLineItem__c</fullName>
+        <description>Refers to the corresponding Opportunity Line Item Id.</description>
+        <externalId>false</externalId>
+        <formula>OpportunityLineItem.X18_Digit_Line_Item_Id__c</formula>
+        <inlineHelpText>Refers to the corresponding Opportunity Line Item Id.</inlineHelpText>
+        <label>OpportunityLineItem</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_LI_Annual_Price_Enrollment__c</fullName>
+        <externalId>false</externalId>
+        <formula>OpportunityLineItem.Annual_Price_per_Enrollment_Old__c</formula>
+        <label>Opportunity LI Annual Price/Enrollment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_LI_Number_of_Enrollments__c</fullName>
+        <externalId>false</externalId>
+        <formula>OpportunityLineItem.Number_of_Enrollments_Old__c</formula>
+        <inlineHelpText>Opportunity Line Item: Number of Enrollments</inlineHelpText>
+        <label>Opportunity LI Number of Enrollments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product2Id</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProductCode</fullName>
+    </fields>
+    <fields>
+        <fullName>Quantity</fullName>
+    </fields>
+    <fields>
+        <fullName>QuoteId</fullName>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>ServiceDate</fullName>
+    </fields>
+    <fields>
+        <fullName>Subtotal</fullName>
+    </fields>
+    <fields>
+        <fullName>TotalPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>UnitPrice</fullName>
+    </fields>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

@@ -12,6 +12,9 @@
         "ApexComponent",
         "ApexPage",
         "ApexTrigger",
-        "StaticResource"
+        "CustomMetadata",
+        "CustomObject",
+        "StaticResource",
+        "Workflow"
     ]
 }

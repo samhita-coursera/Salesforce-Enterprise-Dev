@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Customer Content Needs</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Delivery_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Delivery Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Any_job_requires_writing_Software__c</fullName>
+        <externalId>false</externalId>
+        <label>Any job requires writing Software?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>B2B_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.B2B_Acct_Status__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>B2B Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Buzzwords__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Are there any &apos;buzzwords&apos; that seem to be important to this client (e.g., &quot;customer-centricity&apos;, &apos;digital transformation&apos;, &apos;industry 4.0&apos;)?</inlineHelpText>
+        <label>Buzzwords</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Categories_of_Courses__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What categories of courses are being asked for? (check all that apply)</inlineHelpText>
+        <label>Categories of Courses</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Data Science, including Machine Learning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Computer Science/Programming/Software Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Analytics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Workplace Skills/Soft Skills/Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance and Accounting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leadership and Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing, Sales, Persuasion or Negotiation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Skills/Digital Transformation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>English Language Learning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teaching and Professional Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health and Medicine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineering (Mechanical, Electrical, Chemical, Civil, Materials, etc.)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Competency_Mapping_Required__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Is the client asking us to map our content to a specific set of corporate competencies that they have delivered?</inlineHelpText>
+        <label>Competency Mapping Required?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Content_Curation_Format__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>In what format would you like the content curated?</inlineHelpText>
+        <label>Content Curation Format</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Fully designed slide deck</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Formatted list</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Informal written list</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No external curation needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Content_Curation_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Content Curation Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Working</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Content_Strategy_Team_Member__c</fullName>
+        <externalId>false</externalId>
+        <label>Content Strategy Team Member</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Scott</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alex</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Masha</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Doug</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jonathan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Content_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Which content types is the client looking for? (Check all that apply)</inlineHelpText>
+        <label>Content Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Single courses</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Specializations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Certificates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Degrees</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Course_Content_Outcome__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The course content should be selected to</inlineHelpText>
+        <label>Course Content Outcome</label>
+        <picklist>
+            <picklistValues>
+                <fullName>maximize learner engagement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>map closely content areas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>demonstrate ability to map content to target audience</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>highlight the &apos;best&apos; courses on Coursera that are at all relevant.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>highlight our best known university brands and/or most famous professors.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Describe_specific_content_needs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please describe in greater detail (if possible) what the customer is looking for in terms of specific content areas. Add as much detail as you can, as any additional detail will help us pull the right content for your client.</inlineHelpText>
+        <label>Describe specific content needs</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>PST</inlineHelpText>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Job_Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Job Role</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Job_Roles__c</fullName>
+        <externalId>false</externalId>
+        <label>Job Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Individual Contributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Amount</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Owner__c</fullName>
+        <description>Opportunity Owner created mainly to be used in content related Email Templates</description>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Owner.FirstName + &apos; &apos; + Opportunity__r.Owner.LastName</formula>
+        <label>Opportunity Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text( Opportunity__r.StageName )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>CourseraContent</relationshipLabel>
+        <relationshipName>CourseraContent</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Per_learner_courses__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How many courses per learner do you expect the client to buy?</inlineHelpText>
+        <label>Per learner courses</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1 per learner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3 per learner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6 per learner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12 per learner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pool of enrollments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t know yet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Technology_Landscape__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If this is technology content, please describe as much as you know about the company’s technology stack (e.g. programming languages, frameworks, libraries, software, cloud infrastructure, hardware, etc)?</inlineHelpText>
+        <label>Technology Landscape</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Tools_Languages_Used__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If the content is related to Data Analytics, please describe any tools or languages that the customer uses:</inlineHelpText>
+        <label>Data Analytics Tools &amp; Languages Used</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>employee_choice__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Is there employee choice in this implementation?</inlineHelpText>
+        <label>Employee Choice?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Major Employee Choice: employees choose from a large set of course options</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Some Employee Choice: employees choose from a small set of courses</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Employee Choice: Employees are expected to take all courses</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t know/No client preference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>CourseraContent</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Opportunity_Owner__c</columns>
+        <columns>Describe_specific_content_needs__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Content Request</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CourseraContent</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Curated</fullName>
+        <active>true</active>
+        <label>Curated</label>
+        <picklistValues>
+            <picklist>Any_job_requires_writing_Software__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Categories_of_Courses__c</picklist>
+            <values>
+                <fullName>Business Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Computer Science%2FProgramming%2FSoftware Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Science%2C including Machine Learning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Skills%2FDigital Transformation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering %28Mechanical%2C Electrical%2C Chemical%2C Civil%2C Materials%2C etc%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>English Language Learning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finance and Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Medicine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leadership and Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing%2C Sales%2C Persuasion or Negotiation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teaching and Professional Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workplace Skills%2FSoft Skills%2FCommunication</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competency_Mapping_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Curation_Format__c</picklist>
+            <values>
+                <fullName>Formatted list</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fully designed slide deck</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Informal written list</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No external curation needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Curation_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Working</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Strategy_Team_Member__c</picklist>
+            <values>
+                <fullName>Alex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jonathan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Masha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scott</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Certificates</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Degrees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single courses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Specializations</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Course_Content_Outcome__c</picklist>
+            <values>
+                <fullName>demonstrate ability to map content to target audience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>highlight our best known university brands and%2For most famous professors%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>highlight the %27best%27 courses on Coursera that are at all relevant%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>map closely content areas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>maximize learner engagement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Job_Roles__c</picklist>
+            <values>
+                <fullName>Individual Contributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Per_learner_courses__c</picklist>
+            <values>
+                <fullName>1 per learner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12 per learner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 per learner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 per learner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Don%27t know yet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pool of enrollments</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>employee_choice__c</picklist>
+            <values>
+                <fullName>Don%27t know%2FNo client preference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Employee Choice%3A employees choose from a large set of course options</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Employee Choice%3A Employees are expected to take all courses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Employee Choice%3A employees choose from a small set of courses</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Standard</fullName>
+        <active>true</active>
+        <label>Standard</label>
+        <picklistValues>
+            <picklist>Any_job_requires_writing_Software__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Categories_of_Courses__c</picklist>
+            <values>
+                <fullName>Business Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Computer Science%2FProgramming%2FSoftware Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Science%2C including Machine Learning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Skills%2FDigital Transformation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering %28Mechanical%2C Electrical%2C Chemical%2C Civil%2C Materials%2C etc%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>English Language Learning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finance and Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Medicine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leadership and Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing%2C Sales%2C Persuasion or Negotiation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teaching and Professional Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workplace Skills%2FSoft Skills%2FCommunication</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competency_Mapping_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Curation_Format__c</picklist>
+            <values>
+                <fullName>No external curation needed</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Curation_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Strategy_Team_Member__c</picklist>
+            <values>
+                <fullName>Alex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jonathan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Masha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scott</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Certificates</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Degrees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single courses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Specializations</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Course_Content_Outcome__c</picklist>
+            <values>
+                <fullName>demonstrate ability to map content to target audience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>highlight our best known university brands and%2For most famous professors%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>highlight the %27best%27 courses on Coursera that are at all relevant%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>map closely content areas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>maximize learner engagement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Job_Roles__c</picklist>
+            <values>
+                <fullName>Individual Contributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Per_learner_courses__c</picklist>
+            <values>
+                <fullName>1 per learner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12 per learner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 per learner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 per learner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Don%27t know yet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pool of enrollments</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>employee_choice__c</picklist>
+            <values>
+                <fullName>Don%27t know%2FNo client preference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Employee Choice%3A employees choose from a large set of course options</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Employee Choice%3A Employees are expected to take all courses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Employee Choice%3A employees choose from a small set of courses</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>
