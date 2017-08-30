@@ -476,12 +476,23 @@ if(NumberOfEmployees &gt;10,&quot;11-50&quot;,
         <externalId>false</externalId>
         <inlineHelpText>Fiscal year end of the company: pulled from clearbit.</inlineHelpText>
         <label>Fiscal Year End</label>
-        <length>50</length>
+        <length>10</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Geo_Territory__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Geo_Territory_Values</globalPicklist>
+        <inlineHelpText>Please select correct territory value based on country.</inlineHelpText>
+        <label>Geo Territory</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Government__c</fullName>
@@ -493,6 +504,35 @@ if(NumberOfEmployees &gt;10,&quot;11-50&quot;,
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ICP__c</fullName>
+        <externalId>false</externalId>
+        <label>ICP</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Ideal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strong</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weak</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unfit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Import2_Id__c</fullName>
@@ -520,6 +560,10 @@ if(NumberOfEmployees &gt;10,&quot;11-50&quot;,
             </picklistValues>
             <picklistValues>
                 <fullName>Aerospace &amp; Defense</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aviation &amp; Aerospace</fullName>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
@@ -982,6 +1026,10 @@ if(NumberOfEmployees &gt;10,&quot;11-50&quot;,
                 <fullName>Wireless Telecommunication Services</fullName>
                 <default>false</default>
             </picklistValues>
+            <picklistValues>
+                <fullName>Semiconductors</fullName>
+                <default>false</default>
+            </picklistValues>
             <sorted>false</sorted>
         </picklist>
         <trackFeedHistory>false</trackFeedHistory>
@@ -1313,6 +1361,18 @@ if(NumberOfEmployees &gt;10,&quot;11-50&quot;,
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>SIC_Code_from_Clearbit__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the SIC code from clearbit mapped from lead</inlineHelpText>
+        <label>SIC Code from Clearbit</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Self_Reported_Employee_Range__c</fullName>
         <externalId>false</externalId>
         <label>Self Reported Employee Range</label>
@@ -1547,6 +1607,26 @@ if(find(&quot;/&quot;,if(find(&quot;www.&quot;,Website)&gt;0,IF(FIND(&quot;//&qu
         <columns>ACCOUNT.INDUSTRY</columns>
         <filterScope>Everything</filterScope>
         <label>All Accounts</label>
+    </listViews>
+    <listViews>
+        <fullName>Current_Customer_Accounts</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Account_Manager__c</columns>
+        <columns>Account_Stage__c</columns>
+        <columns>ACCOUNT.EMPLOYEES</columns>
+        <columns>ACCOUNT.INDUSTRY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>B2B_Acct_Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <filters>
+            <field>ACCOUNT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Account.B2B</value>
+        </filters>
+        <label>Current Customer Accounts</label>
     </listViews>
     <listViews>
         <fullName>Customer_Success_View</fullName>
@@ -1789,6 +1869,56 @@ if(find(&quot;/&quot;,if(find(&quot;www.&quot;,Website)&gt;0,IF(FIND(&quot;//&qu
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Geo_Territory_Values</picklist>
+            <values>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-India APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North America</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ICP__c</picklist>
+            <values>
+                <fullName>Ideal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unfit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weak</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Industry</picklist>
             <values>
                 <fullName>Accounting</fullName>
@@ -1836,6 +1966,10 @@ if(find(&quot;/&quot;,if(find(&quot;www.&quot;,Website)&gt;0,IF(FIND(&quot;//&qu
             </values>
             <values>
                 <fullName>Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aviation %26 Aerospace</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -2208,6 +2342,10 @@ if(find(&quot;/&quot;,if(find(&quot;www.&quot;,Website)&gt;0,IF(FIND(&quot;//&qu
             </values>
             <values>
                 <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semiconductors</fullName>
                 <default>false</default>
             </values>
             <values>

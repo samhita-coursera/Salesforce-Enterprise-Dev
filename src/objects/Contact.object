@@ -507,6 +507,50 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Reference_of_Coursera_Exec__c</fullName>
+        <externalId>false</externalId>
+        <label>Reference of Coursera Exec</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Rick</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Andrew</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nikhil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jeff</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leah</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Julia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Referred_by_Coursera_Exec__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Referred by Coursera Exec</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>ReportsToId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
@@ -1184,6 +1228,33 @@ HYPERLINK(&quot;/apex/mkto_si__Contact_Full_List?view=IM&amp;id=&quot; &amp; Id,
                 <default>false</default>
             </values>
         </picklistValues>
+        <picklistValues>
+            <picklist>Reference_of_Coursera_Exec__c</picklist>
+            <values>
+                <fullName>Andrew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jeff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Julia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leah</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nikhil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rick</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>Partnerships</fullName>
@@ -1358,6 +1429,33 @@ HYPERLINK(&quot;/apex/mkto_si__Contact_Full_List?view=IM&amp;id=&quot; &amp; Id,
             </values>
             <values>
                 <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reference_of_Coursera_Exec__c</picklist>
+            <values>
+                <fullName>Andrew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jeff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Julia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leah</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nikhil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rick</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

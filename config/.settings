@@ -5,7 +5,7 @@
     "namespace": "",
     "orgType": "developer",
     "loginUrl": "https://login.salesforce.com/",
-    "instanceUrl": "https://cs17.salesforce.com",
+    "instanceUrl": "https://cs77.salesforce.com",
     "workspace": "/Users/spidapartiswati/Documents/Sublime Workspace",
     "subscription": [
         "ApexClass",

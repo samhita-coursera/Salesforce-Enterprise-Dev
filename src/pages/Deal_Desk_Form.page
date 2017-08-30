@@ -35,7 +35,7 @@
                          Provide any additional details that would be helpful during the legal negotiation.
                          <p/>
                     </apex:outputText>  
-                    <apex:inputField label="Legal Negotiation Details" value="{!Opportunity.Legal_Negotiation_Next_Steps__c}" required="true"/>
+                    <apex:inputField label="Legal Negotiation Details" value="{!Opportunity.Legal_Negotiation_Next_Steps__c}" style="width: 800px;" required="true"/>
            </apex:pageBlockSection>
        </apex:pageBlock>
         <script>

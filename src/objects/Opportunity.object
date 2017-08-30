@@ -94,6 +94,36 @@
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
+    <fieldSets>
+        <fullName>Fields_to_transition_to_CM</fullName>
+        <description>This is going to be used in the trigger when populating values from opportunity to Customer Management.</description>
+        <displayedFields>
+            <field>Description</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Customer_Use_Case__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Top_Priorities__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Decision_Maker__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Deal_Champion__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Fields to transition to CM</label>
+    </fieldSets>
     <fields>
         <fullName>ACV_Quota_Retirement__c</fullName>
         <externalId>false</externalId>
@@ -272,7 +302,7 @@ ExpectedRevenue/(Contract_Months_Calculated__c/12))</formula>
         <fullName>Budget_Confirmed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
-        <label>Budget Confirmed</label>
+        <label>Approved Budget</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
@@ -282,6 +312,28 @@ ExpectedRevenue/(Contract_Months_Calculated__c/12))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Clear_Exec_Engagement_Sponsorship__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Clear executive engagement and sponsorship (C-level / VP-level)</inlineHelpText>
+        <label>Clear Exec Engagement &amp; Sponsorship</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>CloseDate</fullName>
@@ -413,6 +465,29 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <trackHistory>false</trackHistory>
         <type>MultiselectPicklist</type>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Compelling_Event__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>A summary of compelling event/s.</inlineHelpText>
+        <label>Compelling Event</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Competitor__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Competitors</globalPicklist>
+        <inlineHelpText>Please select all applicable competitor values</inlineHelpText>
+        <label>Competitor</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>5</visibleLines>
     </fields>
     <fields>
         <fullName>Content_Domain__c</fullName>
@@ -589,6 +664,17 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Created_By_SDR__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.FirstName + &apos; &apos; + CreatedBy.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created By SDR</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Created_Date_for_Reporting__c</fullName>
         <description>Used to report on created date pre and post data migration using simple report</description>
         <externalId>false</externalId>
@@ -597,6 +683,40 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Use_Case__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Summary of the customer specific use case</inlineHelpText>
+        <label>Customer Use Case</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Deal_Champion__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Champion contact for this deal</inlineHelpText>
+        <label>Deal Champion</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.AccountId</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunities (Deal Champion)</relationshipLabel>
+        <relationshipName>Opportunities_where_Deal_Champion</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Deal_Terms_Approved__c</fullName>
@@ -622,9 +742,53 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Decision_Maker__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Decision maker related to this deal</inlineHelpText>
+        <label>Decision Maker</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.AccountId</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunities (Decision Maker)</relationshipLabel>
+        <relationshipName>Opportunities_where_Decision_Maker</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Desire_for_broad_implementation__c</fullName>
+        <externalId>false</externalId>
+        <label>Desire for broad implementation</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Discount_Approved__c</fullName>
@@ -692,6 +856,16 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Geo_Territory__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.Geo_Territory__c)</formula>
+        <label>Geo Territory</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Growth_Strategy__c</fullName>
@@ -782,6 +956,17 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>LID__Is_Influenced__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Opportunity was influenced by activities on LinkedIn Sales Navigator</description>
+        <externalId>false</externalId>
+        <label>Is_Influenced</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>LID__LinkedIn_Company_Id__c</fullName>
@@ -885,6 +1070,27 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
                 <fullName>WorkRamp</fullName>
                 <default>false</default>
             </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>L_D_Business_Units_Engaged__c</fullName>
+        <externalId>false</externalId>
+        <label>L&amp;D &amp; Business Units Engaged</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
         <required>false</required>
@@ -1036,6 +1242,27 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Learning_Goals_Aligned_to_Content__c</fullName>
+        <externalId>false</externalId>
+        <label>Learning Goals Aligned to Content</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Legacy_Create_Date__c</fullName>
         <externalId>false</externalId>
         <label>Legacy Create Date</label>
@@ -1061,10 +1288,11 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <externalId>false</externalId>
         <inlineHelpText>Summary of next steps needed in legal negotiation</inlineHelpText>
         <label>Legal Negotiation Next Steps</label>
-        <required>false</required>
+        <length>131072</length>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
-        <type>TextArea</type>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
     </fields>
     <fields>
         <fullName>Licenses__c</fullName>
@@ -1348,6 +1576,56 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Ongoing_Budget__c</fullName>
+        <externalId>false</externalId>
+        <label>Ongoing Budget</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_ICP__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity ICP</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Ideal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strong</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weak</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unfit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Opportunity_Owner_Manager_Email__c</fullName>
         <externalId>false</externalId>
         <label>Opportunity Owner&apos;s Manager&apos;s Email</label>
@@ -1400,6 +1678,47 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Our_Competitive_Differentiator__c</fullName>
+        <externalId>false</externalId>
+        <label>Our Competitive Differentiator</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Outdated_Geo_Territory__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Geo_Territory_Values</globalPicklist>
+        <label>Outdated_Geo Territory</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Over_5K_Employees__c</fullName>
+        <externalId>false</externalId>
+        <label>Over 5K Employees</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
@@ -1561,6 +1880,16 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Red_Flags__c</fullName>
+        <externalId>false</externalId>
+        <label>Red Flags</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Referencabiliy__c</fullName>
         <description>Referenceability Type</description>
         <externalId>false</externalId>
@@ -1598,6 +1927,25 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Region_Vertical_based_on_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(CreatedBy.LastName = &apos;Marques&apos;,&apos;EMEA&apos;, 
+IF(OR(CreatedBy.LastName = &apos;Young&apos;,CreatedBy.LastName = &apos;Andrade&apos;),&apos;North America&apos;, 
+IF(CreatedBy.LastName = &apos;Mays&apos;,&apos;Gov&apos;, 
+IF(OR(CreatedBy.LastName = &apos;Shailaj&apos;,CreatedBy.LastName = &apos;Mehra&apos;),&apos;APAC&apos;, 
+IF(CreatedBy.LastName = &apos;Munro&apos;,&apos;Wes&apos;,&apos;None&apos;) 
+) 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region/Vertical based on Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Rejected_internally__c</fullName>
@@ -1661,6 +2009,49 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requires_Product_Customization__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Requires product customization and has ACV &lt; $1M</inlineHelpText>
+        <label>Requires Product Customization</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reseller__c</fullName>
+        <externalId>false</externalId>
+        <label>Reseller</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Rick_Sync_Notes__c</fullName>
@@ -1809,6 +2200,17 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Top_Priorities__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please specify list of top priorities</inlineHelpText>
+        <label>Top Priorities</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>TotalOpportunityQuantity</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -1955,6 +2357,28 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Willing_to_provide_resources__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Willing to provide sufficient resources and time</inlineHelpText>
+        <label>Willing to provide resources</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>mkto_si__MarketoAnalyzer__c</fullName>
@@ -2216,6 +2640,17 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Clear_Exec_Engagement_Sponsorship__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Closed_Won_Reason__c</picklist>
             <values>
                 <fullName>Ability to curate catalogue</fullName>
@@ -2247,6 +2682,29 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
             </values>
             <values>
                 <fullName>University brands and certificates</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competitors</picklist>
+            <values>
+                <fullName>EDX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lynda</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plurasight</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SkillSoft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Udemy</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2305,6 +2763,17 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Desire_for_broad_implementation__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>ForecastCategoryName</picklist>
             <values>
                 <fullName>Closed</fullName>
@@ -2335,6 +2804,37 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
             </values>
             <values>
                 <fullName>Identify Land</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Geo_Territory_Values</picklist>
+            <values>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-India APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North America</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2437,6 +2937,17 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>L_D_Business_Units_Engaged__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
                 <fullName>Clearbit</fullName>
@@ -2531,6 +3042,17 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
             </values>
             <values>
                 <fullName>Outbound%3A Proactive outreach</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Learning_Goals_Aligned_to_Content__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2653,6 +3175,47 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Ongoing_Budget__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opportunity_ICP__c</picklist>
+            <values>
+                <fullName>Ideal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unfit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weak</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Over_5K_Employees__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Pilot_POC__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -2725,6 +3288,28 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Requires_Product_Customization__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reseller__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Sales_Channel__c</picklist>
             <values>
                 <fullName>Direct</fullName>
@@ -2771,6 +3356,17 @@ AND(MONTH(TODAY())&gt;=10,MONTH(CloseDate)&lt;10))</formula>
         </picklistValues>
         <picklistValues>
             <picklist>Vendor_Registration_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Willing_to_provide_resources__c</picklist>
             <values>
                 <fullName>No</fullName>
                 <default>false</default>

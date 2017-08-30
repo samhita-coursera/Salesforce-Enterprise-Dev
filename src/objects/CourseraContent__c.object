@@ -307,6 +307,10 @@
                 <fullName>Jonathan</fullName>
                 <default>false</default>
             </picklistValues>
+            <picklistValues>
+                <fullName>Heliatrice</fullName>
+                <default>false</default>
+            </picklistValues>
             <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
@@ -739,6 +743,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Heliatrice</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Jonathan</fullName>
                 <default>false</default>
             </values>
@@ -978,6 +986,10 @@
             </values>
             <values>
                 <fullName>Doug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heliatrice</fullName>
                 <default>false</default>
             </values>
             <values>

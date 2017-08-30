@@ -77,8 +77,8 @@
         <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
     </alerts>
     <alerts>
-        <fullName>Lead_Assignment_Notification_Lauren_Cuzzaniti</fullName>
-        <description>Lead Assignment Notification-Lauren Cuzzaniti</description>
+        <fullName>Lead_Assignment_Notification_Jade_Mays</fullName>
+        <description>Lead Assignment Notification-Jade Mays</description>
         <protected>false</protected>
         <recipients>
             <recipient>jmays@coursera.org</recipient>
@@ -389,10 +389,23 @@ ISPICKVAL( LeadSource  , &quot;Inbound: Website&quot;)
         </actions>
         <active>true</active>
         <formula>AND (
- LastModifiedById = &apos;00536000002BhHb&apos;,
+ OwnerId = &apos;00536000002BcO3AAK&apos;,
  X2016_Geo_Territory__c = &apos;India&apos;,
  Government__c = false,
  Nonprofit__c = false
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Assignment Notification-Jade Mays</fullName>
+        <actions>
+            <name>Lead_Assignment_Notification_Jade_Mays</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( OwnerId = &apos;00536000002Bd7NAAS&apos;,
+OR (Government__c = True,
+     Nonprofit__c  = True)
 )</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
@@ -404,24 +417,9 @@ ISPICKVAL( LeadSource  , &quot;Inbound: Website&quot;)
         </actions>
         <active>true</active>
         <formula>AND (
- LastModifiedById = &apos;00536000002BhHb&apos;, 
  X2016_Geo_Territory__c = &apos;LATAM&apos;,
  Government__c = false,
  Nonprofit__c = false
-)</formula>
-        <triggerType>onCreateOnly</triggerType>
-    </rules>
-    <rules>
-        <fullName>Lead Assignment Notification-Lauren Cuzzaniti</fullName>
-        <actions>
-            <name>Lead_Assignment_Notification_Lauren_Cuzzaniti</name>
-            <type>Alert</type>
-        </actions>
-        <active>true</active>
-        <formula>AND (
- LastModifiedById = &apos;00536000002BhHb&apos;,
- OR (Government__c = true,
-     Nonprofit__c  = true)
 )</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
@@ -488,7 +486,6 @@ ISPICKVAL( LeadSource  , &quot;Inbound: Website&quot;)
         </actions>
         <active>true</active>
         <formula>AND (
- LastModifiedById = &apos;00536000002BhHb&apos;,
  X2016_Geo_Territory__c = &apos;EMEA&apos;,
  Government__c = false,
  Nonprofit__c = false
@@ -506,11 +503,7 @@ ISPICKVAL( LeadSource  , &quot;Inbound: Website&quot;)
             <field>Lead.LeadSource</field>
             <operation>notEqual</operation>
         </criteriaItems>
-        <criteriaItems>
-            <field>Lead.CreatedDate</field>
-            <operation>notEqual</operation>
-        </criteriaItems>
-        <triggerType>onCreateOnly</triggerType>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
         <fullName>Unqualified Automatic Lead</fullName>

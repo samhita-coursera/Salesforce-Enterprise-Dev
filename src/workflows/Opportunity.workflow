@@ -5,6 +5,10 @@
         <description>Closed Lost Renewal Opty Alert</description>
         <protected>false</protected>
         <recipients>
+            <field>Opportunity_Owner_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
             <recipient>ddixit@coursera.org</recipient>
             <type>user</type>
         </recipients>
@@ -24,15 +28,15 @@
         <description>Closed lost Non-Renewal Gov Role Opty Alert</description>
         <protected>false</protected>
         <recipients>
+            <field>Opportunity_Owner_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
             <recipient>ddixit@coursera.org</recipient>
             <type>user</type>
         </recipients>
         <recipients>
             <recipient>julia@coursera.org</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>rebecca@coursera.org</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
@@ -42,6 +46,10 @@
         <fullName>Closed_lost_Non_Renewal_Non_Gov_Role_Opty_Alert</fullName>
         <description>Closed lost Non-Renewal Non-Gov Role Opty Alert</description>
         <protected>false</protected>
+        <recipients>
+            <field>Opportunity_Owner_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
         <recipients>
             <recipient>ddixit@coursera.org</recipient>
             <type>user</type>
@@ -74,7 +82,7 @@
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>nishav@coursera.org.enterprise</recipient>
+            <recipient>nishav@coursera.org</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
@@ -157,6 +165,7 @@
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
         <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <rules>
         <fullName>Closed Lost Email</fullName>

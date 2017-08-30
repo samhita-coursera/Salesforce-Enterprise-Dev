@@ -136,6 +136,39 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Consumption_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Enrollments__c / Total_Number_of_Enrollments_Purchased__c)</formula>
+        <label>Consumption Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Consumption_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF((Consumption_Percentage__c&gt;=0 &amp;&amp;  Consumption_Percentage__c&lt;= 0.405), 
+     IMAGE(&quot;/servlet/servlet.FileDownload?file=015360000037eFb&quot;,&quot;Orange&quot;, 16, 50),
+     IF((Consumption_Percentage__c&gt; 0.405 &amp;&amp;  Consumption_Percentage__c&lt;= 0.705),
+         IMAGE(&quot;/servlet/servlet.FileDownload?file=015360000037eEx&quot;,&quot;Yellow&quot;, 16, 50),
+         IF((Consumption_Percentage__c&gt; 0.705 &amp;&amp;  Consumption_Percentage__c&lt; 0.996),
+            IMAGE(&quot;/servlet/servlet.FileDownload?file=015360000037eGu&quot;,&quot;Light_Green&quot;, 16, 50),
+            IF(Consumption_Percentage__c&gt;= 0.996, 
+               IMAGE(&quot;/servlet/servlet.FileDownload?file=015360000037eFC&quot;,&quot;Dark_Green&quot;, 16, 50),
+               null)
+             )
+))</formula>
+        <label>Consumption Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Contract_End_Date__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Agreement End Date</inlineHelpText>
@@ -182,6 +215,18 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Enrollment_utilization_by_time__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Time adjusted (expected) enrollment utilization for contract: Pulled from EDW</inlineHelpText>
+        <label>% of Enrollment utilization by time</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
     </fields>
     <fields>
         <fullName>Enrollments__c</fullName>
@@ -265,6 +310,44 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Health_Score_Category__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>F: scores well in one categories 
+D: scores well in less than two categories
+C: scores well in less than three categories
+B: scores well in less than four categories
+A: scores well in Enrollment utilization by time and four or more categories</inlineHelpText>
+        <label>Health Score Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Invites_Accepted__c</fullName>
         <description>This field represents the number of invites accepted within programs associated with this contract</description>
         <externalId>false</externalId>
@@ -291,6 +374,26 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Finance_Validated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Finance Validated?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Valid__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Yes_No_Picklist</globalPicklist>
+        <inlineHelpText>Is this contract valid?</inlineHelpText>
+        <label>Is Valid?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Launch_Date__c</fullName>
@@ -382,6 +485,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Non_complete_active_enroll_last_2_weeks__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>% of non completed enrollments that are active in the last 2 weeks: Pulled from EDW</inlineHelpText>
+        <label>Non-complete active enroll last 2 weeks</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
         <fullName>Number_of_Users_Purchased__c</fullName>
         <externalId>false</externalId>
         <label>Number of Users Purchased</label>
@@ -418,6 +533,42 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_completion_rate_within_6_weeks__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>6 week completion rate of enrollments: Pulled from EDW</inlineHelpText>
+        <label>Program completion rate within 6 weeks</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Program_enrollment_rate_within_7_days__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>7 day enroll rate of program members: Pulled from EDW</inlineHelpText>
+        <label>Program enrollment rate within 7 days</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Program_join_rate_within_7_days__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>7 day program join rate of visitors to program home page: Pulled from EDW</inlineHelpText>
+        <label>Program join rate within 7 days</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
     </fields>
     <fields>
         <fullName>Purchased_Enrollments_Allotted__c</fullName>
@@ -524,6 +675,8 @@
     <label>Customer Pulse</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>Enterprise_Customer_Name__c</columns>
+        <columns>Enterprise_Customer_Slug__c</columns>
         <columns>CREATED_DATE</columns>
         <columns>AccountName__c</columns>
         <columns>NAME</columns>
@@ -531,8 +684,6 @@
         <columns>Enterprise_Contract_ID__c</columns>
         <columns>Enterprise_Customer_ID__c</columns>
         <columns>Total_Number_of_Enrollments_Purchased__c</columns>
-        <columns>Enterprise_Customer_Name__c</columns>
-        <columns>Enterprise_Customer_Slug__c</columns>
         <columns>Completions__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>

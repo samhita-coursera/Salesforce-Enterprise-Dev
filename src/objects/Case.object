@@ -104,6 +104,17 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Admin_Training__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Case_Implementation_Sub_Statuses</globalPicklist>
+        <label>Admin Training</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Asana_Link__c</fullName>
         <externalId>false</externalId>
         <label>Asana Link</label>
@@ -170,16 +181,15 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
-        <fullName>Contract_ID__c</fullName>
+        <fullName>Content_discussion__c</fullName>
         <externalId>false</externalId>
-        <label>Contract ID</label>
-        <length>20</length>
+        <globalPicklist>Case_Implementation_Sub_Statuses</globalPicklist>
+        <label>Content discussion</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Description</fullName>
@@ -194,6 +204,58 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Go_Live__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Case_Implementation_Sub_Statuses</globalPicklist>
+        <label>Go Live</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Implementation Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>On Track</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Launched</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overdue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Internal_Transition_AE_IM__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Case_Implementation_Sub_Statuses</globalPicklist>
+        <label>Internal Transition (AE-IM)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>IsClosedOnCreate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -204,6 +266,28 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Kick_off_meeting_with_client__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Case_Implementation_Sub_Statuses</globalPicklist>
+        <label>Kick off meeting with client</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Launch__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Case_Implementation_Sub_Statuses</globalPicklist>
+        <label>Launch</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Opportunity_Salesforce_ID__c</fullName>
@@ -293,6 +377,28 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Program_Marketing_Requirement_Gathering__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Case_Implementation_Sub_Statuses</globalPicklist>
+        <label>Program Marketing Requirement Gathering</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Program_Testing__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Case_Implementation_Sub_Statuses</globalPicklist>
+        <label>Program Testing</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Programs_Specification_Template__c</fullName>
         <defaultValue>&quot;https://docs.google.com/spreadsheets/d/1pW5zAKMoN1n4EL3GGEVqU5DMOGaiulG1u4gJaAIyGnU/edit#gid=2139265451&quot;</defaultValue>
         <externalId>false</externalId>
@@ -303,6 +409,17 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Project_Plan_creation__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Case_Implementation_Sub_Statuses</globalPicklist>
+        <label>Project Plan creation</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Reason</fullName>
@@ -404,6 +521,28 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Technical_Build__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Case_Implementation_Sub_Statuses</globalPicklist>
+        <label>Technical Build</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Transition_to_AM__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Case_Implementation_Sub_Statuses</globalPicklist>
+        <label>Transition to AM</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <picklist>
             <picklistValues>
@@ -447,6 +586,26 @@
         <label>All Open Cases</label>
     </listViews>
     <listViews>
+        <fullName>HImanshu_s_case_view</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Opportunity__c</columns>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Internal_Transition_AE_IM__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Provisioning</value>
+        </filters>
+        <label>HImanshu&apos;s case view</label>
+    </listViews>
+    <listViews>
         <fullName>MyCases</fullName>
         <filterScope>Mine</filterScope>
         <label>My Cases</label>
@@ -468,6 +627,48 @@
         <active>true</active>
         <businessProcess>Coursera For Business</businessProcess>
         <label>Provisioning</label>
+        <picklistValues>
+            <picklist>Case_Implementation_Sub_Statuses</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overdue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Implementation_Status__c</picklist>
+            <values>
+                <fullName>Launched</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Track</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overdue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Origin</picklist>
             <values>
@@ -564,6 +765,16 @@
     </searchLayouts>
     <sharingModel>ReadWriteTransfer</sharingModel>
     <validationRules>
+        <fullName>Cannot_close_a_case_without_launch_date</fullName>
+        <active>true</active>
+        <description>An IM cannot close a case without Actual Launch Date for the partner.</description>
+        <errorConditionFormula>IF(ISPICKVAL(Status,&apos;Closed&apos;), 
+IF(Actual_Launch_Date__c = null,True,False), 
+false 
+)</errorConditionFormula>
+        <errorMessage>Please enter the Actual Launch Date on the Case Record before closing the case. Click &apos;Cancel&apos; and you will be taken back to the previous page where you can input the value.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Cannot_close_a_case_without_slug_info</fullName>
         <active>true</active>
         <description>IM cannot close a case without Client Slug and Actual Launch Date info.</description>
@@ -571,27 +782,8 @@
 			IF(Client_Slug__c =&apos;&apos;,True,False),
 				false
 			)</errorConditionFormula>
-        <errorDisplayField>AccountId</errorDisplayField>
-        <errorMessage>Please enter the Client Slug before closing the case.</errorMessage>
+        <errorMessage>Please enter the Client Slug on the Case Record before closing the case. Click &apos;Cancel&apos; and you will be taken back to the previous page where you can input the value.</errorMessage>
     </validationRules>
-    <webLinks>
-        <fullName>Implementation_Details</fullName>
-        <availability>online</availability>
-        <displayType>button</displayType>
-        <hasMenubar>false</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>false</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
-        <linkType>page</linkType>
-        <masterLabel>Implementation Details</masterLabel>
-        <openType>newWindow</openType>
-        <page>Case_Implementation</page>
-        <position>none</position>
-        <protected>false</protected>
-        <showsLocation>false</showsLocation>
-        <showsStatus>false</showsStatus>
-    </webLinks>
     <webLinks>
         <fullName>dsfs__Send_with_DocuSign</fullName>
         <availability>online</availability>

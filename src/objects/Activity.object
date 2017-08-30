@@ -34,6 +34,39 @@
     </actionOverrides>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>Case_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Contact Email</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Contact_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Contact First Name</label>
+        <length>225</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Contact_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Contact Last Name</label>
+        <length>225</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_for_the_contact_is_closed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Case for the contact is closed</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Import2_Id__c</fullName>
         <description>Id of the record in original system, where it was imported from by Import2.com</description>
         <externalId>true</externalId>
@@ -42,6 +75,22 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LID__Date_Sent__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Date Sent</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LID__URL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>URL</label>
+        <required>false</required>
+        <type>Url</type>
     </fields>
     <fields>
         <fullName>Legacy_Activity_SF_ID__c</fullName>

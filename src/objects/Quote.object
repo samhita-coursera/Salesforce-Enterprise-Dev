@@ -282,7 +282,27 @@
         <fullName>Tax</fullName>
     </fields>
     <fields>
+        <fullName>Tax_Field_Label__c</fullName>
+        <defaultValue>&quot;Withholding tax at 10% :&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Tax Field Label</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>TotalPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>to_be_Invoiced_Upon_Execution_Label__c</fullName>
+        <defaultValue>&quot;Total to be Invoiced Upon Execution:&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label># to be Invoiced Upon Execution Label</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <listViews>
         <fullName>mine</fullName>

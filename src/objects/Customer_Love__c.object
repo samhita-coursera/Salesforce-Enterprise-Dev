@@ -157,14 +157,68 @@
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>Customer_use_case__c</fullName>
+        <fullName>Customer_Use_Case__c</fullName>
         <externalId>false</externalId>
-        <label>Customer use case</label>
+        <label>Customer Use Case</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Html</type>
-        <visibleLines>25</visibleLines>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Deal_Champion__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Deal Champion</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Customer Love (Deal Champion)</relationshipLabel>
+        <relationshipName>Customer_Love_where_Deal_Champion</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Decision_Maker__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Decision Maker</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Customer Love (Decision Maker)</relationshipLabel>
+        <relationshipName>Customer_Love_Decision_Maker</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Implementation_Details__c</fullName>
@@ -229,7 +283,23 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
+    <fields>
+        <fullName>Top_Priorities__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please specify list of top priorities</inlineHelpText>
+        <label>Top Priorities</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
     <label>Customer Love</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <displayFormat>C-{00000}</displayFormat>
         <label>Customer Love Name</label>

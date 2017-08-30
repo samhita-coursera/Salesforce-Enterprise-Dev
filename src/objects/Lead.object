@@ -121,6 +121,9 @@
         <fields>Phone</fields>
         <fields>MobilePhone</fields>
         <fields>Email</fields>
+        <fields>LeadSource</fields>
+        <fields>Status</fields>
+        <fields>Lead_Status_Detail__c</fields>
         <label>Leads Custom Compact Layout</label>
     </compactLayouts>
     <enableFeeds>true</enableFeeds>
@@ -452,6 +455,10 @@
             </picklistValues>
             <picklistValues>
                 <fullName>Aerospace &amp; Defense</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aviation &amp; Aerospace</fullName>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
@@ -914,6 +921,10 @@
                 <fullName>Wireless Telecommunication Services</fullName>
                 <default>false</default>
             </picklistValues>
+            <picklistValues>
+                <fullName>Semiconductors</fullName>
+                <default>false</default>
+            </picklistValues>
             <sorted>false</sorted>
         </picklist>
         <trackFeedHistory>false</trackFeedHistory>
@@ -934,7 +945,7 @@
     <fields>
         <fullName>Industry_Group_Clearbit__c</fullName>
         <externalId>false</externalId>
-        <label>Industry Group</label>
+        <label>Industry Group - Clearbit</label>
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -1159,6 +1170,17 @@
         <length>80</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_SDR_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.FirstName + &apos; &apos; + Owner:User.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead SDR Name</label>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
@@ -1567,6 +1589,25 @@ IF(CONTAINS ( &quot; Bangladesh : Bhutan : Brunei : Cambodia : China : Indonesia
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Region_Vertical_based_on_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Owner:User.LastName = &apos;Marques&apos;,&apos;EMEA&apos;,
+		IF(OR(Owner:User.LastName = &apos;Young&apos;,Owner:User.LastName = &apos;Andrade&apos;),&apos;North America&apos;,
+				IF(Owner:User.LastName = &apos;Mays&apos;,&apos;Gov&apos;,
+						IF(OR(Owner:User.LastName = &apos;Shailaj&apos;,Owner:User.LastName = &apos;Mehra&apos;),&apos;APAC&apos;,
+								IF(Owner:User.LastName = &apos;Munro&apos;,&apos;Wes&apos;,&apos;None&apos;)
+								)
+						)
+				)
+		)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region/Vertical based on Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Salesforce_18_Digit_Id__c</fullName>
         <externalId>false</externalId>
         <formula>CASESAFEID(Id)</formula>
@@ -1715,6 +1756,15 @@ IF(CONTAINS ( &quot; Bangladesh : Bhutan : Brunei : Cambodia : China : Indonesia
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Test_Field__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Test Field</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Title</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -1819,11 +1869,9 @@ IF(CONTAINS( &quot; CANADA : UNITED STATES : USA : US &quot;, Country_in_upperca
 IF(CONTAINS( &quot; INDIA &quot;, Country_in_uppercase__c), &quot;India&quot;, 
 IF(CONTAINS( &quot; ANGUILLA : MEXICO: MÉXICO: ANTIGUA AND BARBUDA : ARGENTINA : ARUBA : BAHAMAS : BARBADOS : BELIZE : BERMUDA : BOLIVIA, PLURINATIONAL STATE OF : BONAIRE, SINT EUSTATIUS AND SABA : BRAZIL : CAYMAN ISLANDS : CHILE : COLOMBIA : COSTA RICA : CUBA : CURAÇAO : DOMINICA : DOMINICAN REPUBLIC : ECUADOR : EL SALVADOR : FRENCH GUIANA : FALKLAND ISLANDS (MALVINAS) : GRENADA : GUADELOUPE : GUATEMALA : GUYANA : HAITI : HONDURAS : JAMAICA : MARTINIQUE (FRENCH ANT.) : MONTSERRAT : NEW CALEDONIA : NICARAGUA : PANAMA : PARAGUAY : PERU : PUERTO RICO : SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA : SAINT KITTS AND NEVIS : SAINT LUCIA : SAINT MARTIN : SAINT PIERRE AND MIQUELON : SAINT VINCENT AND THE GRENADINES : SINT MAARTEN : SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS : SURINAME : TRINIDAD AND TOBAGO : TURKS AND CAICOS ISLANDS : URUGUAY : VENEZUELA : VIRGIN ISLANDS, BRITISH&quot;, Country_in_uppercase__c), &quot;LATAM&quot;, 
 
-IF(CONTAINS (&quot;ALBANIA : ANDORRA : AUSTRIA : BELARUS : BOSNIA AND HERZEGOVINA : BULGARIA : CROATIA : CYPRUS : CZECH REPUBLIC : DENMARK : ESTONIA : FAROE ISLANDS : FINLAND : GEORGIA : GERMANY : GIBRALTAR : GREECE : GUERNSEY : HUNGARY : ICELAND : ISLE OF MAN : ITALY : JERSEY : KOSOVO : LATVIA : LIECHTENSTEIN : LITHUANIA : MACEDONIA : MALTA : MOLDOVA : MONACO : MONTENEGRO : NORWAY : POLAND : PORTUGAL : ROMANIA : RUSSIA : SAN MARINO : SERBIA : SLOVAKIA : SLOVENIA : SPAIN : ESPAÑA : SVALBARD AND JAN MAYEN ISLAND : SWEDEN : SWITZERLAND : TURKEY : UKRAINE : VATICAN CITY : ARMENIA : AFGHANISTAN : AZERBAIJAN : BAHRAIN : EGYPT : IRAN : IRAQ : ISRAEL : JORDAN : KUWAIT : LEBANON : OMAN : PAKISTAN : PALESTINE : QATAR : SAUDI ARABIA : SYRIA : UNITED ARAB EMIRATES : ANGOLA : BENIN : BOTSWANA : BURKINA FASO : BURUNDI : CAMEROON : CAPE VERDE : CENTRAL AFRICAN REPUBLIC : CHAD : COMOROS : CONGO, THE DEMOCRATIC REPUBLIC OF THE : COTE D’IVOIRE : DJIBOUTI : EQUATORIAL GUINEA : ERITREA : ETHIOPIA : FRENCH SOUTHERN TERRITORIES : GABON : GAMBIA : GHANA : GUINEA : GUINEA-BISSAU : HEARD ISLAND AND MCDONALD ISLANDS : KENYA : LESOTHO : LIBERIA : LIBYA : MADAGASCAR : MALAWI : MALI : MAURITANIA : MAURITIUS : MAYOTTE : MOROCCO : MOZAMBIQUE : NAMIBIA : NIGER : NIGERIA : REUNION ISLAND : RWANDA : SAINT BARTHÉLEMY : SAO TOME AND PRINCIPE : SENEGAL : SEYCHELLES : SIERRA LEONE : SOMALIA : SOUTH AFRICA : SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS : SOUTH SUDAN : SUDAN : SWAZILAND : TANZANIA : TOGO : TUNISIA : UGANDA : WESTERN SAHARA : ZAMBIA : ZIMBABWE : IRELAND : UNITED KINGDOM : YEMEN: ALGERIA&quot;, Country_in_uppercase__c), &quot;EMEA&quot;,
-
-IF(CONTAINS ( &quot;LUXEMBOURG : FRANCE : BELGIUM : NETHERLANDS&quot;, Country_in_uppercase__c), &quot;EMEA_2&quot;,
+IF(CONTAINS (&quot;ALBANIA : ANDORRA : AUSTRIA : BELARUS : BOSNIA AND HERZEGOVINA : BULGARIA : CROATIA : CYPRUS : CZECH REPUBLIC : DENMARK : ESTONIA : FAROE ISLANDS : FINLAND : GEORGIA : GERMANY : GIBRALTAR : GREECE : GUERNSEY : HUNGARY : ICELAND : ISLE OF MAN : ITALY : JERSEY : KOSOVO : LATVIA : LIECHTENSTEIN : LITHUANIA : MACEDONIA : MALTA : MOLDOVA : MONACO : MONTENEGRO : NORWAY : POLAND : PORTUGAL : ROMANIA : RUSSIA : SAN MARINO : SERBIA : SLOVAKIA : SLOVENIA : SPAIN : ESPAÑA : SVALBARD AND JAN MAYEN ISLAND : SWEDEN : SWITZERLAND : TURKEY : UKRAINE : VATICAN CITY : ARMENIA : AFGHANISTAN : AZERBAIJAN : BAHRAIN : EGYPT : IRAN : IRAQ : ISRAEL : JORDAN : KUWAIT : LEBANON : OMAN : PAKISTAN : PALESTINE : QATAR : SAUDI ARABIA : SYRIA : UNITED ARAB EMIRATES : ANGOLA : BENIN : BOTSWANA : BURKINA FASO : BURUNDI : CAMEROON : CAPE VERDE : CENTRAL AFRICAN REPUBLIC : CHAD : COMOROS : CONGO, THE DEMOCRATIC REPUBLIC OF THE : COTE D’IVOIRE : DJIBOUTI : EQUATORIAL GUINEA : ERITREA : ETHIOPIA : FRENCH SOUTHERN TERRITORIES : GABON : GAMBIA : GHANA : GUINEA : GUINEA-BISSAU : HEARD ISLAND AND MCDONALD ISLANDS : KENYA : LESOTHO : LIBERIA : LIBYA : MADAGASCAR : MALAWI : MALI : MAURITANIA : MAURITIUS : MAYOTTE : MOROCCO : MOZAMBIQUE : NAMIBIA : NIGER : NIGERIA : REUNION ISLAND : RWANDA : SAINT BARTHÉLEMY : SAO TOME AND PRINCIPE : SENEGAL : SEYCHELLES : SIERRA LEONE : SOMALIA : SOUTH AFRICA : SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS : SOUTH SUDAN : SUDAN : SWAZILAND : TANZANIA : TOGO : TUNISIA : UGANDA : WESTERN SAHARA : ZAMBIA : ZIMBABWE : IRELAND : UNITED KINGDOM : YEMEN : ALGERIA : LUXEMBOURG : FRANCE : BELGIUM : NETHERLANDS&quot;, Country_in_uppercase__c), &quot;EMEA&quot;,
  
-IF(CONTAINS ( &quot; BANGLADESH : BHUTAN : BRUNEI : CAMBODIA : CHINA : HONG KONG: INDONESIA : JAPAN : KAZAKHSTAN : NORTH KOREA : SOUTH KOREA : KYRGYZSTAN : LAOS : MACAO : MALAYSIA : MONGOLIA : MYANMAR : NEPAL : SINGAPORE : SRI LANKA : TAIWAN : TURKMENISTAN : UZBEKISTAN : VIETNAM : AUSTRALIA : BRITISH INDIAN OCEAN TERRITORY : CHRISTMAS ISLAND : COCOS (KEELING) ISLANDS : COOK ISLANDS : FEDERATED STATES OF MICRONESIA : FIJI : FRENCH POLYNESIA : KIRIBATI : MALDIVES : MARSHALL ISLANDS : MONGOLIA : MYANMAR : NAURU : NEPAL : NEW ZEALAND : NIUE ISLAND : NORFOLK ISLAND : PALAU : PAPUA NEW GUINEA : PHILIPPINES : PITCAIRN ISLAND : SAMOA : SOLOMON ISLANDS : THAILAND : TIMOR-LESTE : TOKELAU ISLAND : TONGA ISLAND : TUVALU : BURMA: VANUATU : VIRGIN ISLANDS, US : WALLIS AND FUTUNA&quot;, Country_in_uppercase__c), &quot;Non-India APAC&quot;, &quot;Unknown&quot;)))))))</formula>
+IF(CONTAINS ( &quot; BANGLADESH : BHUTAN : BRUNEI : CAMBODIA : CHINA : HONG KONG: INDONESIA : JAPAN : KAZAKHSTAN : NORTH KOREA : SOUTH KOREA : KYRGYZSTAN : LAOS : MACAO : MALAYSIA : MONGOLIA : MYANMAR : NEPAL : SINGAPORE : SRI LANKA : TAIWAN : TURKMENISTAN : UZBEKISTAN : VIETNAM : AUSTRALIA : BRITISH INDIAN OCEAN TERRITORY : CHRISTMAS ISLAND : COCOS (KEELING) ISLANDS : COOK ISLANDS : FEDERATED STATES OF MICRONESIA : FIJI : FRENCH POLYNESIA : KIRIBATI : MALDIVES : MARSHALL ISLANDS : MYANMAR : NAURU : NEPAL : NEW ZEALAND : NIUE ISLAND : NORFOLK ISLAND : PALAU : PAPUA NEW GUINEA : PHILIPPINES : PITCAIRN ISLAND : SAMOA : SOLOMON ISLANDS : THAILAND : TIMOR-LESTE : TOKELAU ISLAND : TONGA ISLAND : TUVALU : BURMA: VANUATU : VIRGIN ISLANDS, US : WALLIS AND FUTUNA&quot;, Country_in_uppercase__c), &quot;Non-India APAC&quot;, &quot;Unknown&quot;))))))</formula>
         <inlineHelpText>Based on lookup against &apos;Country&apos;, looks up the primary Coursera territory for routing and prioritization purposes</inlineHelpText>
         <label>Geo Territory</label>
         <required>false</required>
@@ -2648,6 +2696,10 @@ HYPERLINK(&quot;/apex/mkto_si__Lead_Full_List?view=IM&amp;id=&quot; &amp; Id, mk
                 <default>false</default>
             </values>
             <values>
+                <fullName>Aviation %26 Aerospace</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Banking</fullName>
                 <default>false</default>
             </values>
@@ -3017,6 +3069,10 @@ HYPERLINK(&quot;/apex/mkto_si__Lead_Full_List?view=IM&amp;id=&quot; &amp; Id, mk
             </values>
             <values>
                 <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semiconductors</fullName>
                 <default>false</default>
             </values>
             <values>

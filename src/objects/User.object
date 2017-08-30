@@ -61,6 +61,14 @@
     <enableFeeds>true</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>Is_SDR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is SDR?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Legacy_User_SF_ID__c</fullName>
         <caseSensitive>false</caseSensitive>
         <externalId>true</externalId>
