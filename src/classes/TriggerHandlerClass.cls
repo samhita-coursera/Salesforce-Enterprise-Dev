@@ -43,12 +43,15 @@ public with sharing class TriggerHandlerClass
     }
 
     public void UpdateLeadsWithIndustryGroup(List<Lead> leadsToUpdate) {
-        system.debug('entered the method');
+        Map<String,String> ib_map = new Map<String,String>();
+        for(IndustryBuckets__c ib: IndustryBuckets__c.getall().Values()){
+            ib_map.put(ib.Industry__c, ib.Industry_Group__c);
+        }
         for(Lead l: leadsToUpdate) {
             if(l.Industry_Group_Clearbit__c != null) {
                 l.Industry_Group__c = l.Industry_Group_Clearbit__c;
-            } else if(IndustryBuckets__c.getValues(l.Industry) != null){
-                l.Industry_Group__c = IndustryBuckets__c.getValues(l.Industry).Industry_Group__c;                
+            } else if(ib_map.keySet().Contains(l.Industry)){
+                l.Industry_Group__c = ib_map.get(l.Industry);                
             }
         }
     }

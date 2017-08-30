@@ -15,13 +15,13 @@ private class TriggerHandlerClass_Test {
 	}
 	
 	@isTest static void test_InsertOrUpdate_IndustryGroupOnLead() {
-		IndustryBuckets__c ib = new IndustryBuckets__c(Name = 'Household Durables', Industry_Group__c ='Consumer Durables & Apparel');
+		IndustryBuckets__c ib = new IndustryBuckets__c(Name = 'TestName', Industry__c = 'Household Durables', Industry_Group__c ='Consumer Durables & Apparel');
 		insert ib;
 		List<Lead> leadsToInsert = new List<Lead>();
 		Test.startTest();
 		Lead l1 = new Lead(LastName = 'TestLastName1', Company = 'Test Company1', Status = 'Working');
 		leadsToInsert.add(l1);
-		Lead l2 = new Lead(LastName = 'TestLastName2', Company = 'Test Company2', Status = 'Working', Industry='Household Durables');
+		Lead l2 = new Lead(LastName = 'TestLastName2', Company = 'Test Company2', Status = 'Working', Industry='xyz');
 		leadsToInsert.add(l2);
 		Lead l3 = new Lead(LastName = 'TestLastName3', Company = 'Test Company3', Status = 'Working', Industry='Household Durables', Industry_Group_Clearbit__c = 'Consumer Durables & Apparel');
 		leadsToInsert.add(l3);
